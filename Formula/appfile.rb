@@ -1,11 +1,7 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Appfile < Formula
     desc "Deploy App specs to DigitalOcean App Platform"
     homepage "https://github.com/renehernandez/appfile"
-    url "https://github.com/renehernandez/appfile/archive/v0.0.3.tar.gz"
-    sha256 "ca7d55c417c888b4b4aa324c300919434c4ee15d4c8ab8a623fc239b8a873f41"
+    url "https://github.com/renehernandez/appfile.git", tag: "0.0.3", revision: '6cb1a7f8dddbd267af916f97bedff99402ed7f5e'
     license "MIT"
 
     depends_on "go" => :build
@@ -18,4 +14,4 @@ class Appfile < Formula
     test do
         assert_match version.to_s, shell_output("#{bin}/appfile -v")
     end
-  end
+end

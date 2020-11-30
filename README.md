@@ -1,4 +1,6 @@
-# My Taps
+# homebrew-taps
+
+This is the homebrew tap for renehernandez. Formulas should go in here.
 
 ## How do I install these formulae?
 
