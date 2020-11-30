@@ -12,7 +12,7 @@ class Appfile < Formula
 
     def install
         system "go", "build", "-ldflags", "-X github.com/renehernandez/appfile/internal/version.Version=#{version}",
-        "-o", bin/appfile, "-v", "github.com/renehernandez/appfile"
+        "-o", bin/"appfile", "-v", "github.com/renehernandez/appfile"
     end
 
     test do
