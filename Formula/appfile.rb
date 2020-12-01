@@ -1,13 +1,13 @@
 class Appfile < Formula
     desc "Deploy App specs to DigitalOcean App Platform"
     homepage "https://github.com/renehernandez/appfile"
-    url "https://github.com/renehernandez/appfile.git", tag: "v0.0.3", revision: '6cb1a7f8dddbd267af916f97bedff99402ed7f5e'
+    url "https://github.com/renehernandez/appfile.git", tag: "v0.0.4", revision: "f8ff78d378ca05b8c3ab89bfa9569abb5225e637"
     license "MIT"
 
     depends_on "go" => :build
 
     def install
-        system "go", "build", "-ldflags", "-X github.com/renehernandez/appfile/internal/version.Version=#{version}",
+        system "go", "build", "-ldflags", "-X github.com/renehernandez/appfile/internal/version.Version=#{version "v0.0.4"}",
         "-o", bin/"appfile", "-v", "github.com/renehernandez/appfile"
     end
 
