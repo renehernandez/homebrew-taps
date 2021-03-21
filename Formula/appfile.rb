@@ -1,7 +1,7 @@
 class Appfile < Formula
     desc "Deploy App specs to DigitalOcean App Platform"
     homepage "https://github.com/renehernandez/appfile"
-    url "https://github.com/renehernandez/appfile.git", tag: "v0.0.8", revision: "68580ebb4b6ca01fc9c753f36c6fa26629a51222"
+    url "https://github.com/renehernandez/appfile.git", tag: "v0.0.8", revision: "752ec7ee124d11db9a8a3d1b62372bb7802776de"
     license "MIT"
 
     depends_on "go" => :build
