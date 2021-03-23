@@ -7,9 +7,9 @@ class Appfile < Formula
     depends_on "go" => :build
 
     bottle do
-        root_url "https://homebrew.bintray.com/bottles-taps"
-        sha256 cellar: :any_skip_relocation, catalina: "915504dc0d70c636546b198ebe88c89a002f44bf5254b4483f8d88104548be70"
-        sha256 cellar: :any_skip_relocation, mojave: "7f9c4626d997f47d9114dcc5b538a4940877dcd5e038b95c6013743b2e5dde78"
+        root_url "https://github.com/renehernandez/hello/releases/download/v0.0.8"
+        sha256 catalina: "915504dc0d70c636546b198ebe88c89a002f44bf5254b4483f8d88104548be70"
+        sha256 mojave: "7f9c4626d997f47d9114dcc5b538a4940877dcd5e038b95c6013743b2e5dde78"
     end
 
     def install
