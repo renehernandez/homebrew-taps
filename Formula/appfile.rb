@@ -1,23 +1,17 @@
 class Appfile < Formula
-    desc "Deploy App specs to DigitalOcean App Platform"
-    homepage "https://github.com/renehernandez/appfile"
-    url "https://github.com/renehernandez/appfile.git", tag: "v0.0.8", revision: "c86149d470d31c4b860cbcf4cbf6f80e029a3a21"
-    license "MIT"
+  desc "Deploy App specs to DigitalOcean App Platform"
+  homepage "https://github.com/renehernandez/appfile"
+  url "https://github.com/renehernandez/appfile.git", tag: "v0.0.9", revision: "09cffbb8ad115b3ebed604b9d99421f3cb3dc7fe"
+  license "MIT"
 
-    depends_on "go" => :build
+  depends_on "go" => :build
 
-    bottle do
-        root_url "https://github.com/renehernandez/appfile/releases/download/v0.0.8"
-        sha256 catalina: "915504dc0d70c636546b198ebe88c89a002f44bf5254b4483f8d88104548be70"
-        sha256 mojave: "7f9c4626d997f47d9114dcc5b538a4940877dcd5e038b95c6013743b2e5dde78"
-    end
+  def install
+    system "go", "build", "-ldflags", "-X github.com/renehernandez/appfile/internal/version.Version=#{version "v0.0.9"}",
+           "-o", bin/"appfile", "-v", "github.com/renehernandez/appfile"
+  end
 
-    def install
-        system "go", "build", "-ldflags", "-X github.com/renehernandez/appfile/internal/version.Version=#{version "v0.0.8"}",
-        "-o", bin/"appfile", "-v", "github.com/renehernandez/appfile"
-    end
-
-    test do
-        assert_match version.to_s, shell_output("#{bin}/appfile -v")
-    end
+  test do
+    assert_match version.to_s, shell_output("#{bin}/appfile -v")
+  end
 end
